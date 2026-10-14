@@ -10,15 +10,15 @@
 // --------------------------------------------------
 
 // First, we create a variable for the current scene being displayed
-let currentScene = "backyard";
+let currentScene = "Hallway";
 
 // Then, we create an object that stores the data for each scene,
 const scenes = {
   // See "backyard" for the first example
-  backyard: {
-    title: "Location: Backyard",
-    character: "Interviewee:Grandma",
-    text: "Text: well what I remember happening is that Darcie went inside to play with her pretend kitchen, I heard her neighbor mention he was really hungry, and the dog ran around really quickly",
+  Hallway: {
+    title: "Location: Hallway",
+   
+    text: "Wendy arrives to school early, she starts at the hallway but you can pick any location she can search."
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
