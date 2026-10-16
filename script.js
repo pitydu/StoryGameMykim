@@ -16,52 +16,78 @@ let currentScene = "Hallway";
 const scenes = {
   // See "backyard" for the first example
   Hallway: {
-    title: "Location: Hallway",
-   
-    text: "Wendy arrives to school early, she starts at the hallway but you can pick any location she can search."
+    title: " Hallway",
+    text: "Wendy arrives at school early to look for her wand but she can only investigate 1 location per day. She starts in the hallway where she can check her locker or talk to the janitor but she can go to any location. Where should she start?",
+
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
       {
-        text: "Chase after the dog (-10 HP)",
+        text: "Talk to the janitor",
         action: function () {
           updateHealth(-10);
         },
-        nextScene: "entrance"
-      },
-      {
-        text: "Ask about the neighbor",
         nextScene: "hallway"
       },
       {
-          text: "Pick up the brass key",
+        text: "Check locker",
+        action: function () {
+          pickUpItem("Gum");
+        },
+      },
+      {
+          text: "Next location",
           action: function () {
-            pickUpItem("brass key");
+            updateScene("Cafeteria");
           },
-          nextScene: "hallway"
+          action: function () {
+          updateDay(-1);
+        },
+          nextScene: "Cafeteria"
+        
       }
     ]
   },
 
-  entrance: {
-    title: "Location: Entrance",
-    character: "Interviewee:Neighbor",
-    text: "well what I remember...",
+  Cafeteria: {
+    title: "Cafeteria",
+    text: "The cafeteria is empty but there's an apple and a key, which does Wendy pick?",
     choices: [
       {
-        text: "Ask about the dog",
-        nextScene: "backyard"
+        text: "Pick up the apple",
+        action: function () {
+          pickUpItem("apple");
+        }
+        nextScene: "Cafeteria"
       },
          {
-        text: "Ask about the neighbor",
-        nextScene: "hallway"
+        text: "Pick up the key",
+        action: function () {
+          pickUpItem("key");
+        },
+        nextScene: "Cafeteria"
+      }
+  },
+    text: "Next location",
+        action: function () {
+            updateScene("Classroom");
+          },
+          action: function () {
+          updateDay(-1);
+        },
+          nextScene: "Classroom"
       }
     ]
   },
 
+  Classroom: {
+    title: "Classroom",
+    text:"Wendy enters the classroom and sees her teacher and classmate"
+  
+  
   hallway: {
-    title: "The Hallway",
-    text: "The hallway is dark and silent.",
+    title: "Hallway",
+    text: "It turns out that the janitor was actually an alien!",
     choices: [
       {
         text: "backyard",
@@ -178,6 +204,21 @@ function updateHealth(amount) {
 
 // This refreshes the health display
 updateHealth(0);
+
+// Create a variable for health
+let day = 10;
+
+// Display current health
+const dayDisplay = document.getElementById("day-display");
+
+// Create a function to update health 
+function updateDay(amount) {
+  day += amount;
+  dayDisplay.textContent = day;
+}
+
+// This refreshes the day display
+updateDay(0);
 
 // --------------------------------------------------
 // INVENTORY
