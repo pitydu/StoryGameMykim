@@ -67,7 +67,7 @@ const scenes = {
         },
         nextScene: "Cafeteria"
       }
-    },
+    ,{
     text: "Next location",
         action: function () {
             updateScene("Classroom");
@@ -91,46 +91,17 @@ const scenes = {
         },
         nextScene: "Classroom"
       },
-      {
-
-
-        }
-      }
-    ]
+  
+    ]},
   
   
-  hallway: {
-    title: "Hallway",
-    text: "It turns out that the janitor was actually an alien!",
-    choices: [
-      {
-        text: "backyard",
-        nextScene: "hallway"
-      }
-    ]
-  },
-
-   lockedDoor: {
-    title: "The Locked Door",
-    text: "The door handle doesn't move.",
-    choices: [
-      {
-        text: "Try to open it",
-        action: unlockDoor
-      },
-      {
-        text: "Go back",
-        nextScene: "backyard"
-      }
-    ]
-  },
 
    solution: {
     title: "The solution",
     text: "You solved the mystery!",
     
   }
-};
+  };
 
 // --------------------------------------------------
 // UPDATE SCENES
