@@ -1,0 +1,40 @@
+.h1{
+       background-color: rgb(216, 85, 163);
+       h1{
+           text-align: center;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+           background-color: white;
+           color: rgb(220, 86, 158);   
+       }
+       
+       
+}
+
+.p{
+       color: white;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       text-align: center;
+}
+
+
+.h3{
+       text-align: center;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       border-color: rgb(109, 235, 25);
+       border-style: solid;
+       border-width: 2px;
+       color:rgb(255, 255, 255);
+
+       }
+.ol{
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       border-color: rgb(238, 173, 222);
+       border-style: solid;
+       border-width: 2px;
+       color:rgb(255, 255, 255)
+       
+
+    
+
+}
+

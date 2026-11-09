@@ -25,7 +25,7 @@ const scenes = {
       {
         text: "Talk to the janitor",
         action: function () {
-          updateHealth(-10);
+          updateHealth(-20);
         },
         nextScene: "hallway"
       },
@@ -57,7 +57,7 @@ const scenes = {
         text: "Pick up the apple",
         action: function () {
           pickUpItem("apple");
-        }
+        },
         nextScene: "Cafeteria"
       },
          {
@@ -67,7 +67,7 @@ const scenes = {
         },
         nextScene: "Cafeteria"
       }
-  },
+    },
     text: "Next location",
         action: function () {
             updateScene("Classroom");
@@ -82,7 +82,21 @@ const scenes = {
 
   Classroom: {
     title: "Classroom",
-    text:"Wendy enters the classroom and sees her teacher and classmate"
+    text:"Wendy enters the classroom and sees her teacher and classmate",
+    choices: [
+      {
+        text: "Talk to the teacher",
+        action: function () {
+          updateHealth(-30);
+        },
+        nextScene: "Classroom"
+      },
+      {
+
+
+        }
+      }
+    ]
   
   
   hallway: {
@@ -91,7 +105,7 @@ const scenes = {
     choices: [
       {
         text: "backyard",
-        nextScene: "lockedDoor"
+        nextScene: "hallway"
       }
     ]
   },
